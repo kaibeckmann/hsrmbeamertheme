@@ -13,6 +13,7 @@
 \ProvidesPackage{beamerthemehsrm}[2013/05/05]
 
 \usepackage{eso-pic}
+\graphicspath{{images/}{../images/}}
 
 \newif\if@doSans
 \@doSansfalse
@@ -132,20 +133,20 @@
 	% Sans serif math option
 	\if@doSans%
 		\usepackage[no-math]{fontspec}%	
-		\setmainfont{Flama-Light}%
+		\setmainfont{Flama-Book}%
 	\else%
 		\usepackage{fontspec}%	
 		\usefonttheme[onlymath]{serif}%
 	\fi%
-	\newfontfamily\Light{Flama-Light}%
+	\newfontfamily\Light{Flama-Book}%
 	\newfontfamily\Book{Flama-Book}%
 	\newfontfamily\Medium{Flama-Medium}%
-	\setsansfont{Flama-Light}%
+	\setsansfont{Flama-Book}%
 \fi%
 
 \renewcommand\UrlFont{\Medium}
 % Titlepage
-\setbeamerfont{title}{family=\Light,size=\fontsize{20}{20}}
+\setbeamerfont{title}{family=\Light,size=\fontsize{16}{14}}
 \setbeamerfont{subtitle}{family=\Light,size=\fontsize{12}{14}}
 \setbeamerfont{date}{size=\fontsize{8}{10}}
 \setbeamerfont{author}{size=\fontsize{12}{15}}
@@ -174,11 +175,14 @@
 	\AddToShipoutPictureFG*{\includegraphics[width=\paperwidth]{background.pdf}}
 	\begin{minipage}[b][\paperheight]{\textwidth}
 	\vspace*{5mm}
-	\includegraphics[height=14mm]{./logo}\par
+	\includegraphics[height=14mm]{./logo}
+	\hfill
+	\includegraphics[height=14mm]{./Dopsy-group}\par
 	\vspace*{5mm}
-	\ifx\insertsubtitle\@empty%
+	\ifx\inserttitle\@empty%
 	\else%
-		{\usebeamerfont{title}\usebeamercolor[fg]{title}\MakeUppercase{\inserttitle}\par}%
+ 		{\usebeamerfont{title}\usebeamercolor[fg]{title}{\inserttitle}\par}%
+ 		\vspace*{2mm}
 	\fi%
 	\ifx\insertsubtitle\@empty%
 	\else%
@@ -202,6 +206,7 @@
 		{\usebeamerfont{institute}\usebeamercolor[fg]{institute}\insertinstitute\par}%
 	\fi% 
 	\vspace*{5mm}
+	\addtocounter{framenumber}{-1}
 	\end{minipage}
 }
 
@@ -225,6 +230,7 @@
 \begin{frame}[plain]
 \centering
 \vfill\usebeamerfont{section title}\textcolor{white}{\insertsectionHEAD}\vfill
+\addtocounter{framenumber}{-1}
 \end{frame}
 \endgroup
 }
