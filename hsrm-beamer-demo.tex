@@ -15,7 +15,7 @@
 %--------------------------------------------------------------------------
 % Common packages
 %--------------------------------------------------------------------------
-\usepackage[german]{babel}
+\usepackage[ngerman]{babel}
 
 \usepackage{graphicx}
 \usepackage{multicol}
@@ -49,7 +49,7 @@ xrightmargin=0.5em
 %--------------------------------------------------------------------------
 \usetheme{hsrm}
 
-\usepackage{dtklogos} % must be loaded after theme
+%\usepackage{dtklogos} % must be loaded after theme
 \usepackage{tikz}
 \usetikzlibrary{mindmap,backgrounds}
 
@@ -470,9 +470,9 @@ F(\textrm{j}\omega) = \int\limits_{-\infty}^{\infty} f(t)\cdot\textrm{e}^{-\text
 	\path[mindmap,concept color=hsrmWarmGreyLight,text=hsrmWarmGreyDark]
 	node[concept] {\TeX}
 	[clockwise from=-30]
-	child[concept color=hsrmSec2Dark,text=white] { node[concept] {\textcolor{white}{\XeTeX}} }
-	child[concept color=hsrmSec1CompDark,text=white] { node[concept] {\ConTeXt} }
-	child[concept color=hsrmSec1Dark,text=white] { node[concept] {\LaTeX} };
+	child[concept color=hsrmSec2Dark,text=white] { node[concept] {\textcolor{white}{XeTeX}} }
+	child[concept color=hsrmSec1CompDark,text=white] { node[concept] {ConTeXt} }
+	child[concept color=hsrmSec1Dark,text=white] { node[concept] {LaTeX} };
 \end{tikzpicture}
 \end{frame}
 
